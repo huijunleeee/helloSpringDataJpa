@@ -11,4 +11,6 @@ public interface RegistrationService {
     boolean checkEmailExists(String email);
 
     MyRole findByRolename(String rolename);
+
+    List<MyUser> getAllUsers();
 }

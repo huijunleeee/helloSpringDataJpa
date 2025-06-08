@@ -7,6 +7,7 @@ import kr.ac.hansung.cse.hellospringdatajpa.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,4 +59,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         return role.orElseGet(() -> new MyRole(rolename));
     }
 
+    public List<MyUser> getAllUsers() {
+        return userRepository.findAll();
+    }
 }
